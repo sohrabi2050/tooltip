@@ -104,10 +104,10 @@ export const initTooltip = () => {
       const positionsSplited = elm.dataset?.positions?.split(",") || [];
       tooltipPositionsOrder.split(",").forEach(p => {
         if (positionsSplited.indexOf(p) === -1)
-          positions.push(p);
+          positions.push(p.trim());
       });
       positionsSplited.reverse().forEach(p => {
-        if (p) positions.unshift(p);
+        if (p) positions.unshift(p.trim());
       });
       handleMouseHover(elm, elm.dataset?.tooltip, positions);
       elm.addEventListener("mouseenter", () => { handleMouseHover(elm, elm.dataset?.tooltip, positions); });

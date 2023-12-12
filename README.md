@@ -3,45 +3,51 @@
 
 <img alt="npm package minimized gzipped size (select exports)" src="https://img.shields.io/bundlejs/size/%40sohrabi2050%2Ftooltip"> <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/%40sohrabi2050%2Ftooltip">
 
-[![npm version](https://badge.fury.io/js/%40sohrabi2050%2Ftooltip.svg?v=new)](https://www.npmjs.com/package/@sohrabi2050/tooltip)
+[![npm version](https://badge.fury.io/js/%40sohrabi2050%2Ftooltip.svg?v=new)](https://www.npmjs.com/package/@sohrabi/tooltip)
 <img src="https://shields.io/badge/build-passing-blue"/>
 <img src="https://shields.io/badge/analyze-passing-blue"/>
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=plastic)](https://raw.githubusercontent.com/sohrabi2050/tooltip/main/LICENSE)
 
 <img alt="npm" src="https://img.shields.io/npm/dt/%40sohrabi2050%2Ftooltip?label=total%20download"> <img alt="npm" src="https://img.shields.io/npm/dw/%40sohrabi2050%2Ftooltip?label=weekly download">
+
 # tooltip
+
 simple js css tooltip
 
 to install:
 ```
-npm i @sohrabi2050/tooltip
+npm i @sohrabi/tooltip
 ```
 
 how to import:
 ```
-import { initTooltip } from "@sohrabi2050/tooltip";
+import { initTooltip } from "@sohrabi/tooltip";
 ```
 
 how to use:
 
 <table border="1">
-    <tr><th>option</th><th>description</th></tr>
-    <tr><tr><td>tooltip</td><td>Text to show as tooltip</td></tr>
-    <tr>
-        <td>positions</td>
-        <td>Comma separated list of positions to change the positioning<br />
-        default priority is as follow:
-        <br />
-        bottom, 
-        top, 
-        right, 
-        left, 
-        bottomleft, 
-        bottomright, 
-        topleft, 
-        topright
-        </td>
-    </tr>
+    <thead>
+        <tr><th>option</th><th>description</th></tr>
+        <tr><tr><td>tooltip</td><td>Text to show as tooltip</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>positions</td>
+            <td>Comma separated list of positions to change the positioning<br />
+            default priority is as follow:
+            <br />
+            bottom,
+            top,
+            right,
+            left,
+            bottomleft,
+            bottomright,
+            topleft,
+            topright
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 <hr/>
