@@ -3,12 +3,12 @@ simple js css tooltip
 
 to install:
 ```
-npm i @sohrabi2050/toolip
+npm i @sohrabi2050/tooltip
 ```
 
 how to import:
 ```
-import { initTooltip } from "@sohrabi2050/toolip";
+import { initTooltip } from "@sohrabi2050/tooltip";
 ```
 
 how to use:
