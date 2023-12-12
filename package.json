@@ -8,8 +8,7 @@
     "build": "webpack"
   },
   "publishConfig": {
-    "access": "public",
-    "@sohrabi2050:registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "repository": {
     "type": "git",
