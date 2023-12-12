@@ -1,5 +1,5 @@
-const defaultStyles = 'position: fixed;viibility: hidden;padding: 5px;z-index: 2001;color: #ffffff;background: #000000 !important;border: 1px solid #151515 !important;border-radius: 4px;text-align: center;min-width: 60px;pointer-events: none;';
-const tooltipPositionsOrder = "bottom;top;right;left;bottomleft;bottomright;topleft;topright";
+const defaultStyles = 'position:fixed;viibility:hidden;padding:5px;z-index:2001;color:#ffffff;background:#000000 !important;border:1px solid #151515 !important;border-radius:4px;text-align:center;min-width:60px;pointer-events:none;';
+const tooltipPositionsOrder = "bottom,top,right,left,bottomleft,bottomright,topleft,topright";
 const tooltipId = "simple-tooltip";
 const defaulOffset = 1;
 
@@ -94,38 +94,24 @@ const hideTooltip = () => {
 };
 
 export const initTooltip = () => {
+  if (window["tooltipAlreadyInited"]) return;
+  window["tooltipAlreadyInited"] = true;
   document.addEventListener("mousemove", (e) => {
     const elm = e.target as HTMLElement;
     if (elm?.dataset?.tooltip && !elm?.dataset?.tooltipEventAttached) {
       elm.dataset.tooltipEventAttached = "true";
       const positions = [];
-      const positionsSplited = elm.dataset?.positions?.split(";") || [];
-      tooltipPositionsOrder.split(";").forEach(p => {
+      const positionsSplited = elm.dataset?.positions?.split(",") || [];
+      tooltipPositionsOrder.split(",").forEach(p => {
         if (positionsSplited.indexOf(p) === -1)
           positions.push(p);
       });
       positionsSplited.reverse().forEach(p => {
-        if (p)
-          positions.unshift(p);
+        if (p) positions.unshift(p);
       });
       handleMouseHover(elm, elm.dataset?.tooltip, positions);
       elm.addEventListener("mouseenter", () => { handleMouseHover(elm, elm.dataset?.tooltip, positions); });
-      elm.addEventListener("mouseleave", () => { hideTooltip(); });      
+      elm.addEventListener("mouseleave", () => { hideTooltip(); });
     }
   });
 }
-
-// export const initTooltip = (element: HTMLElement, tooltipContent: string) => {
-//   const positions = [];
-//   const positionsSplited = element.dataset?.positions?.split(";") || [];
-//   tooltipPositionsOrder.split(";").forEach(p => {
-//     if (positionsSplited.indexOf(p) === -1)
-//       positions.push(p);
-//   });
-//   positionsSplited.reverse().forEach(p => {
-//     if (p)
-//       positions.unshift(p);
-//   });
-//   element.addEventListener("mouseenter", () => { handleMouseHover(element, tooltipContent,positions); });
-//   element.addEventListener("mouseleave", () => { hideTooltip(); });
-// }

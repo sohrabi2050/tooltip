@@ -54,3 +54,6 @@ how to use:
 ```
 initTooltip();
 ```
+
+check demo:
+<a href="https://sohrabi2050.github.io/tooltip-demo.html">Open demo page</a>
